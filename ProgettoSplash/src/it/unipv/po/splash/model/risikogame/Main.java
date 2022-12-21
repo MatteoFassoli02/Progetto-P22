@@ -28,7 +28,7 @@ public class Main {
 		Player p2 = new Player("Piani", new Color(100, 10, 10, 0));
 		Board board = new Board();
 		
-		Continent sud = new Continent("sud", 7, new Color(0,100,0,100));
+		Continent sud = new Continent("sud", 7, new Color(0,100,0));
 		Continent nord = new Continent("nord", 5, new Color(0,100,0,100));
 		
 		Territory t1 = new Territory(10, "EmiliaRomagna", 1, 0);
