@@ -2,6 +2,8 @@ package it.unipv.po.splash.model.risikogame.components;
 
 import java.util.HashSet;
 
+import java.awt.Color;
+
 import it.unipv.po.splash.model.risikogame.Player;
 
 public class Territory {
@@ -9,6 +11,8 @@ public class Territory {
 	private String name;
 	private int score;
 	private int idTerritory;
+	private Color color;
+
 	private HashSet<Territory> borders;
 	private Player owner;
 
@@ -77,4 +81,11 @@ public class Territory {
 		this.owner = owner;
 	}
 
+	public Color getColor() {
+		return color;
+	}
+	
+	public void setColor(Color color) {
+		this.color = color;
+	}
 }
