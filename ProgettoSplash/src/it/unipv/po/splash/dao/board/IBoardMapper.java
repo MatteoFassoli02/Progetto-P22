@@ -10,6 +10,5 @@ public interface IBoardMapper {
 	public ArrayList<Territory> getAllTerritories();
 	public ArrayList<String> getBordersOf(Territory t);
 	public ArrayList<String> getTerritoriesOf(Continent c);
-	
 	public String getNameBoard();
 }

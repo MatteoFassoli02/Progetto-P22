@@ -23,7 +23,7 @@ public class BoardXmlMapper implements IBoardMapper, IXmlMapper{
 	private File file;
 	private Document doc;
 	
-	private static final String PATH_PROPERTYNAME="board.path";
+	private static final String PATH_PROPERTYNAME = "board.path";
 	
 	public BoardXmlMapper() throws Exception {
 		super();

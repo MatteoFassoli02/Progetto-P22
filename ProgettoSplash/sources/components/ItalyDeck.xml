@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deck board="italy">
-	<figures>
+	
 		<jolly bonus="0"></jolly>
 		<jack bonus="4"></jack>
 		<cannon bonus="6"></cannon>
 		<knight bonus="22"></knight>
 		<picche bonus="90"></picche>
-	</figures>
+
 	
 		
 			
@@ -33,5 +33,5 @@
 	<card figure="knight">Sardegna</card>
 	<card figure="jack">Sicilia</card>
 	<card figure="jolly"></card>
-	<card figure = "jolly"></card>
+	<card figure="jolly"></card>
 </deck>

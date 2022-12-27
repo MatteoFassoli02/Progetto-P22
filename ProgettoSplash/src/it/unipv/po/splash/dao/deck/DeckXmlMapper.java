@@ -69,6 +69,7 @@ public class DeckXmlMapper implements IDeckMapper, IXmlMapper{
 		}
 	}
 	
+	
 	@Override
 	public int getNumJolly() {
 		int result = 0;
@@ -111,6 +112,7 @@ public class DeckXmlMapper implements IDeckMapper, IXmlMapper{
 
 	@Override
 	public ArrayList<Figure> getFigures() {
+		//TODO
 		ArrayList<Figure> result = new ArrayList<Figure>();
 		return result;
 	}

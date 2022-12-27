@@ -6,7 +6,7 @@ import java.util.Properties;
 public class DeckFactory {
 private static IDeckFactory deck;
 	
-	private static String DECK_PROPERTYNAME="board.generate.metod";
+	private static String DECK_PROPERTYNAME="board.generate.method";
 	
 	public static IDeckFactory getBoardFactory() {
 		String categoryClassName;
