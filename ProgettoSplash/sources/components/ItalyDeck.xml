@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deck board="italy">
+	<figures>
+		<jolly bonus="0"></jolly>
+		<jack bonus="4"></jack>
+		<cannon bonus="6"></cannon>
+		<knight bonus="22"></knight>
+		<picche bonus="90"></picche>
+	</figures>
+	
+		
+			
+	<card figure="jack">Lombardia</card>
+	<card figure="cannon">Piemonte</card>
+	<card figure="knight">Valle d'Aosta</card>
+	<card figure="jack">Liguria</card>
+	<card figure="cannon">Parma</card>
+	<card figure="knight">Veneto</card>
+	<card figure="jack">Trentino</card>
+	<card figure="cannon">Friuli-Venezia Giulia</card>
+	<card figure="knight">Bologna</card>
+	<card figure="jack">Toscana</card>
+	<card figure="cannon">Lazio</card>
+	<card figure="knight">Marche</card>
+	<card figure="jack">Umbria</card>
+	<card figure="cannon">Abruzzo</card>
+	<card figure="knight">Molise</card>
+	<card figure="jack">Campania</card>
+	<card figure="cannon">Basilicata</card>
+	<card figure="knight">Puglia</card>
+	<card figure="jack">Calabria</card>
+	<card figure="cannon">Corsica</card>
+	<card figure="knight">Sardegna</card>
+	<card figure="jack">Sicilia</card>
+	<card figure="jolly"></card>
+	<card figure = "jolly"></card>
+</deck>
