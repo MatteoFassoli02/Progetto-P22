@@ -20,7 +20,6 @@ public class CardBonusStrategy implements ITCBonusStrategy {
 		
 		//TODO voglio che in futuro questo sia un metodo statico di una classe tipo
 		// RisikoGameDefault
-		
-		
 	}
+	
 }

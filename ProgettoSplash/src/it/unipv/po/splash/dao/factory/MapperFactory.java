@@ -49,7 +49,6 @@ public class MapperFactory {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 		}
 
 		return board;

@@ -22,7 +22,5 @@ public class TerritoryCardBonusStrategy implements ITCBonusStrategy{
 				}
 			}
 		}
-		
 	}
-
 }
