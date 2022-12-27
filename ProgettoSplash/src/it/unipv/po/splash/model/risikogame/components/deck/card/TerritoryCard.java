@@ -19,12 +19,20 @@ public class TerritoryCard extends AbstractCard {
 		return territory.getName();
 	}
 
-	public Figure getFigure() {
-		return figure;
+	public String getFigure() {
+		return figure.getFigure();
 	}
 
-	public void setFigure(Figure figure) {
-		this.figure = figure;
+	public void setFigure(String figure) {
+		this.figure.setFigure(figure);
+	}
+	
+	public int getBonus() {
+		return figure.getBonus();
+	}
+
+	public void setBonus(int bonus) {
+		this.figure.setBonus(bonus);
 	}
 
 	@Override

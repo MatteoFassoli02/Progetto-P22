@@ -1,11 +1,12 @@
-package it.unipv.po.splash.model.risikogame.move.placement.strategy;
+package it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce;
 
 
 import java.util.ArrayList;
 
 import it.unipv.po.splash.model.risikogame.components.deck.card.TerritoryCard;
-import it.unipv.po.splash.model.risikogame.components.deck.card.strategy.ITCBonusStrategy;
 import it.unipv.po.splash.model.risikogame.move.placement.Reinforcement;
+import it.unipv.po.splash.model.risikogame.move.placement.strategy.IReinforceStrategy;
+import it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce.strategy.ITCBonusStrategy;
 
 public class CardReinforceStrategy implements IReinforceStrategy {
 	private ArrayList<TerritoryCard> cards;

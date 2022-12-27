@@ -1,8 +1,8 @@
-package it.unipv.po.splash.model.risikogame.components.deck.card.strategy;
+package it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce.strategy;
 
 import java.util.ArrayList;
 
-import it.unipv.po.splash.model.risikogame.move.placement.strategy.CardReinforceStrategy;
+import it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce.CardReinforceStrategy;
 
 public class CompositeCardStrategy implements ITCBonusStrategy {
 	private ArrayList<ITCBonusStrategy> strategies;
