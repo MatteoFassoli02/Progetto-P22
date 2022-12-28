@@ -12,10 +12,12 @@ public class DefaultDeckFactory implements IDeckFactory{
 	
 	public DefaultDeckFactory() {
 		super();
+		initialize();
 	}
 	
-	public void initialize(Board board) {
-		this.board = board;
+	public void initialize() {
+		this.board = 
+		BoardFactory.getBoardFactory().createBoard();
 	}
 
 	@Override
@@ -34,13 +36,5 @@ public class DefaultDeckFactory implements IDeckFactory{
 		}
 
 		return null;
-	}
-
-	public static void main(String[] args) {
-		DefaultDeckFactory name = new DefaultDeckFactory();
-		name.initialize(BoardFactory.getBoardFactory().createBoard());
-		Deck deck = name.createDeck();
-		System.out.println(deck.getCards().size());
-		System.out.println(deck);
 	}
 }

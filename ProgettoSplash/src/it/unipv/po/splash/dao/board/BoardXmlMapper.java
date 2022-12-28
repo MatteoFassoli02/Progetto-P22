@@ -169,7 +169,6 @@ public class BoardXmlMapper implements IBoardMapper, IXmlMapper{
 		Properties p = new Properties(System.getProperties());
 		p.load(new FileInputStream("../ProgettoSplash/sources/properties.txt"));
 		path = p.getProperty(PATH_PROPERTYNAME);
-		System.out.println(path);
 		file = new File(path);
 		if (!file.exists())
 			throw new Exception("non trovato"+ path); 

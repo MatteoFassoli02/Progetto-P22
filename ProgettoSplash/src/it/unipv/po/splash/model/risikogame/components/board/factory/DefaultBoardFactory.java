@@ -13,6 +13,7 @@ public class DefaultBoardFactory implements IBoardFactory {
 		super();
 	}
 	
+	
 	@Override
 	public Board createBoard() {
 		PersistenceFacade data = PersistenceFacade.getInstance();

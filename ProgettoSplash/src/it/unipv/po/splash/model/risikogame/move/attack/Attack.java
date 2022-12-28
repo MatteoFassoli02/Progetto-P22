@@ -1,5 +1,6 @@
 package it.unipv.po.splash.model.risikogame.move.attack;
 
+import it.unipv.po.splash.model.risikogame.Player;
 import it.unipv.po.splash.model.risikogame.components.board.Territory;
 import it.unipv.po.splash.model.risikogame.move.IMove;
 
@@ -27,10 +28,18 @@ public class Attack implements IMove {
 	@Override
 	public void changeTerritory(Territory attacker, Territory defender) {
 		strategy.estimateLostandKilled(this);
+		Player d = defender.getOwner();
+		Player a = attacker.getOwner();
 		if (defender.getNumArmies() <= numKilled) {
 			defender.setOwner(attacker.getOwner());
+			d.removeEstate(defender);
+			a.addEstate(defender);
 			defender.setNumArmies(numAttacker);
 			attacker.removeArmies(numLost + numAttacker);
+			
+			if (d.getEstates().isEmpty()) {
+				d.isKilledBy(a);
+			}
 		} else {
 			defender.removeArmies(numKilled);
 			attacker.removeArmies(numLost);

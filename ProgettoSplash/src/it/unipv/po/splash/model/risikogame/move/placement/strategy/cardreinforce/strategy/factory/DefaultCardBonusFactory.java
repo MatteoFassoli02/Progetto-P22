@@ -5,10 +5,10 @@ import it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce
 import it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce.strategy.ITCBonusStrategy;
 import it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce.strategy.TerritoryCardBonusStrategy;
 
-public class DefaultCardBonusStrategy implements ICardBonusFactory {
+public class DefaultCardBonusFactory implements ICardBonusFactory {
 
 	
-	public DefaultCardBonusStrategy() {
+	public DefaultCardBonusFactory() {
 		super();
 	}
 

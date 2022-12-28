@@ -13,8 +13,9 @@ public class Reinforcement implements IReinforcement{
 		this.strategy = strategy;
 	}
 	
-	public void calcolateReinforcements() {
+	public int calcolateReinforcements() {
 		strategy.estimateReinforce(this);
+		return reinforcements;
 	}
 
 	public void addReinforcements(int r) {
