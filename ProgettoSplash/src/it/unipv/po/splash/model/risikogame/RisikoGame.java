@@ -21,6 +21,7 @@ public class RisikoGame {
 
 	public RisikoGame(String name) {
 		this.name = name;
+		preparatory = true;
 		players = new ArrayList<Player>();
 		turns = new ArrayList<Player>();
 	}
@@ -63,7 +64,39 @@ public class RisikoGame {
 	}
 	
 	public void playGame() {
+		while (preparatory) {
+			for(Player p: turns) {
+				//chiedi su quale territorio vuoi mettere le truppe (con id)
+				//verifica se possibile
+				//chiedi quante truppe vuoi mettere (con un max)
+				//continua a fare questo giochino finchè truppe = 0
+			}
+			preparatory = false;
+		}
 		
+		while(true) {
+			for(Player p: turns) {
+				//verifica se l'obbiettivo di inizio turno è stato compiuto
+				
+				//chiedi al giocatore se vuole usare dele carte
+				
+				//chiedi su quale territorio vuoi mettere le truppe (con id)
+				//verifica se possibile
+				//chiedi quante truppe vuoi mettere (con un max)
+				//continua a fare questo giochino finchè truppe = 0
+				
+				//chiedi quale attacco si vuole fare
+				//verifica se è possibile
+				//chiedi con quante truppe (max 3)
+				//verifca se possibile
+				//continua fino a che un giocatore non vuole smettere di attaccare
+								
+				//verifica se l'obbiettivo di fine turno è stato compiuto
+				
+				//verifica se il giocatore ha conquistato un territorio 
+				//fai pescare una carta dal mazzo 
+			}
+		}
 	}
 
 	public ArrayList<Player> getPlayers() {
