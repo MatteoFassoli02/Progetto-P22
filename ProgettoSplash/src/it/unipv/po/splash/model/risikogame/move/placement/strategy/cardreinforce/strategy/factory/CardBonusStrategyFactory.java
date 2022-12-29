@@ -5,7 +5,7 @@ import java.util.Properties;
 
 
 public class CardBonusStrategyFactory {
-private static ICardBonusFactory cardBonus;
+	private static ICardBonusFactory cardBonus;
 	
 	private static final String CARDBONUS_PROPERTYNAME = "card.bonus.strategy";
 	

@@ -1,7 +1,9 @@
-deck.class.name=it.unipv.po.splash.dao.deck.DeckXmlMapper
-board.class.name=it.unipv.po.splash.dao.board.BoardXmlMapper
-board.path=../ProgettoSplash/sources/components/ItalyBoard.xml
-deck.path=../ProgettoSplash/sources/components/ItalyDeck.xml
+board.factory.class=it.unipv.po.splash.dao.board.BoardXmlMapper
+deck.factory.class=it.unipv.po.splash.dao.deck.DeckXmlMapper
 board.generate.method=it.unipv.po.splash.model.risikogame.components.board.factory.DefaultBoardFactory
 deck.generate.method=it.unipv.po.splash.model.risikogame.components.deck.factory.DefaultDeckFactory
 card.bonus.strategy=it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce.strategy.factory.DefaultCardBonusStrategy
+attack.strategy=it.unipv.po.splash.model.risikogame.move.attack.factory.DefaultAttackStrategyFactory
+player.playing.now=null
+board.path=../ProgettoSplash/sources/components/ItalyBoard.xml
+deck.path=../ProgettoSplash/sources/components/ItalyDeck.xml

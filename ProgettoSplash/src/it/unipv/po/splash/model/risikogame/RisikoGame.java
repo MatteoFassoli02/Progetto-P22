@@ -15,17 +15,23 @@ public class RisikoGame {
 	private boolean preparatory;
 	private Board board;
 	private Deck deck;
-
+	private static RisikoGame instance;
 	private String name;
 	private int idGame;
 
-	public RisikoGame(String name) {
-		this.name = name;
+	private RisikoGame() {
 		preparatory = true;
 		players = new ArrayList<Player>();
 		turns = new ArrayList<Player>();
 	}
-
+	
+	public static RisikoGame getInstance() {
+		if (instance == null) {
+            instance = new RisikoGame();
+        }
+        return instance;
+	}
+	
 	public void generateTurns() {
 		Dice dice;
 		while (!(players.isEmpty())) {
@@ -78,7 +84,7 @@ public class RisikoGame {
 			for(Player p: turns) {
 				//verifica se l'obbiettivo di inizio turno è stato compiuto
 				
-				//chiedi al giocatore se vuole usare dele carte
+				//chiedi al giocatore se vuole usare delle carte
 				
 				//chiedi su quale territorio vuoi mettere le truppe (con id)
 				//verifica se possibile
@@ -163,21 +169,5 @@ public class RisikoGame {
 		this.deck = deck;
 	}
 	
-	public static void main(String[] args) {
-		Player p1 = new Player("P1", new Color(0,0,255));
-		Player p2 = new Player("P2", new Color(0,255,0));
-		Player p3 = new Player("P3", new Color(255,0,0));
-		
-		RisikoGame game = new RisikoGame("Prova");
-		game.addPlayer(p1);
-		game.addPlayer(p2);
-		game.addPlayer(p3);
-		game.newGame();
-		game.generateTurns();
-		game.giveInitialTerritories();
-		
-		System.out.println(p1.toString());
-		System.out.println(p2.toString());
-		System.out.println(p3.toString());
-	}
+	
 }

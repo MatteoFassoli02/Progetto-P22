@@ -9,7 +9,6 @@ public class CardBonusStrategy implements ITCBonusStrategy {
 	
 	public CardBonusStrategy() {
 		super();
-		
 	}
 
 	@Override

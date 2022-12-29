@@ -10,8 +10,8 @@ public class MapperFactory {
 	private static IDeckMapper deck;
 	private static IBoardMapper board;
 	
-	private static final String DECK_PROPERTYNAME = "deck.class.name";
-	private static final String BOARD_PROPERTYNAME = "board.class.name";
+	private static final String DECK_PROPERTYNAME = "deck.factory.class";
+	private static final String BOARD_PROPERTYNAME = "board.factory.class";
 	
 	public MapperFactory() {
 		super();

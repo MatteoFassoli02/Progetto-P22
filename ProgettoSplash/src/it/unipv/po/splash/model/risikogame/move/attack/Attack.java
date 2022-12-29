@@ -3,6 +3,7 @@ package it.unipv.po.splash.model.risikogame.move.attack;
 import it.unipv.po.splash.model.risikogame.Player;
 import it.unipv.po.splash.model.risikogame.components.board.Territory;
 import it.unipv.po.splash.model.risikogame.move.IMove;
+import it.unipv.po.splash.model.risikogame.move.attack.factory.AttackStrategyFactory;
 
 public class Attack implements IMove {
 	private int numDefender;
@@ -15,14 +16,7 @@ public class Attack implements IMove {
 		super();
 		this.numDefender = numDefender;
 		this.numAttacker = numAttacker;
-		strategy = new DefaultAttackStrategy();
-	}
-
-	public Attack(int numAttacker, int numDefender, IAttackStrategy strategy) {
-		super();
-		this.numDefender = numDefender;
-		this.numAttacker = numAttacker;
-		this.strategy = strategy;
+		strategy = AttackStrategyFactory.getAttackStrategy().makeStrategyAttack();
 	}
 
 	@Override

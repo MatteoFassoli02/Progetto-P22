@@ -7,6 +7,7 @@ import it.unipv.po.splash.model.risikogame.components.deck.factory.DeckFactory;
 
 public class ComponentsFacade {
 	private static ComponentsFacade instance;
+	private Board boardInstance;
 	
 	private ComponentsFacade() {
 		super();
@@ -20,7 +21,10 @@ public class ComponentsFacade {
 	}
 	
 	public Board createBoard() {
-		return BoardFactory.getBoardFactory().createBoard();
+		if (boardInstance == null) {
+			boardInstance = BoardFactory.getBoardFactory().createBoard();
+		}
+		return boardInstance;
 	}
 	
 	public Deck createDeck() {
