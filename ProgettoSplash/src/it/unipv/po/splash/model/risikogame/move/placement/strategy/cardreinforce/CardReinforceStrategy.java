@@ -1,32 +1,49 @@
 package it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce;
 
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.Properties;
 
+import it.unipv.po.splash.model.risikogame.Player;
 import it.unipv.po.splash.model.risikogame.components.deck.card.TerritoryCard;
 import it.unipv.po.splash.model.risikogame.move.placement.Reinforcement;
 import it.unipv.po.splash.model.risikogame.move.placement.strategy.IReinforceStrategy;
 import it.unipv.po.splash.model.risikogame.move.placement.strategy.cardreinforce.strategy.ITCBonusStrategy;
+import it.unipv.po.splash.model.risikogame.risiko.DefaultRisikoGame;
 
 public class CardReinforceStrategy implements IReinforceStrategy {
 	private ArrayList<TerritoryCard> cards;
 	private int reinforce;
 	private ITCBonusStrategy strategy;
+	private Player player;
+	
+	private static final String PLAYER_PROPERTYNAME = "player.playing.now";
 	
 	public CardReinforceStrategy(ITCBonusStrategy strategy) {
 		super();
 		reinforce = 0;
 		this.strategy = strategy;
 		cards = new ArrayList<TerritoryCard>();
+		initialize();
 	}
 	
-	public void use(TerritoryCard t1, TerritoryCard t2, TerritoryCard t3) {
-		cards.add(t1);
-		cards.add(t2);
-		cards.add(t3);
-		t1.discard(t1.getOwner());
-		t2.discard(t2.getOwner());
-		t3.discard(t3.getOwner());
+	public void initialize() {
+		try {
+			String categoryClassName;
+			Properties p = new Properties(System.getProperties());
+			p.load(new FileInputStream("../ProgettoSplash/sources/properties.txt"));
+			categoryClassName = p.getProperty(PLAYER_PROPERTYNAME);
+			
+			player = DefaultRisikoGame.getInstance().getTurns().get(Integer.parseInt(categoryClassName));
+			 
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			cards.add(player.askCard());
+		}
 	}
 	
 	@Override

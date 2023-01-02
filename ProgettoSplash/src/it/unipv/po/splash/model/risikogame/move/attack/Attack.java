@@ -21,10 +21,16 @@ public class Attack implements IMove {
 
 	@Override
 	public void changeTerritory(Territory attacker, Territory defender) {
-		strategy.estimateLostandKilled(this);
+		System.out.println("Attacco da: " + attacker.getName() + " [" + attacker.getIdTerritory() + "]");
+		System.out.println("Difesa in: " + defender.getName() + " [" + defender.getIdTerritory() + "]" + " di " + defender.getOwner().getName());
 		Player d = defender.getOwner();
 		Player a = attacker.getOwner();
-		if (defender.getNumArmies() <= numKilled) {
+		strategy.estimateLostandKilled(this);
+		System.out.println("Attacco perde: " + numLost);
+		System.out.println("Difesa perde: " + numKilled);
+		defender.removeArmies(numKilled);
+		
+		if (defender.getNumArmies() <= 0) {
 			defender.setOwner(attacker.getOwner());
 			d.removeEstate(defender);
 			a.addEstate(defender);
@@ -35,9 +41,15 @@ public class Attack implements IMove {
 				d.isKilledBy(a);
 			}
 		} else {
-			defender.removeArmies(numKilled);
 			attacker.removeArmies(numLost);
 		}
+		System.out.println("Risultato dell'attacco");
+		System.out.println(attacker.showInformation());
+		System.out.println(defender.showInformation());
+	}
+	
+	public void showAttack() {
+		
 	}
 
 	public int getNumDefender() {

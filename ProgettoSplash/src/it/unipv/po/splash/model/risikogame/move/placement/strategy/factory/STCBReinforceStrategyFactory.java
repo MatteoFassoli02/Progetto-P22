@@ -15,7 +15,11 @@ public class STCBReinforceStrategyFactory implements  IReinforceStrategyFactory{
 		CompositeReinforceStrategy crs = new CompositeReinforceStrategy();
 		crs.addStrategy(new ContinentReinforceStrategy());
 		crs.addStrategy(new TerritoryReinforceStrategy());
-		crs.addStrategy(new CardReinforceStrategy(CardBonusStrategyFactory.getCardBonusStrategy().createStrategyBonus()));
+		CardReinforceStrategy card = 
+				new CardReinforceStrategy(CardBonusStrategyFactory.getCardBonusStrategy().createStrategyBonus());
+
+		crs.addStrategy(card);
+		
 		return crs;
 	}
 

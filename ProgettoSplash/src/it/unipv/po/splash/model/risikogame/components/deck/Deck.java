@@ -3,13 +3,13 @@ package it.unipv.po.splash.model.risikogame.components.deck;
 import java.util.ArrayList;
 
 import it.unipv.po.splash.model.risikogame.Player;
-import it.unipv.po.splash.model.risikogame.components.deck.card.AbstractCard;
+import it.unipv.po.splash.model.risikogame.components.deck.card.TerritoryCard;
 
 public class Deck {
-	private ArrayList<AbstractCard> cards;
+	private ArrayList<TerritoryCard> cards;
 
 	public Deck() {
-		cards = new ArrayList<AbstractCard>();
+		cards = new ArrayList<TerritoryCard>();
 	}
 
 	public void drawCard(Player player) {
@@ -18,26 +18,26 @@ public class Deck {
 		removeCard(cards.get(cards.size() - 1));
 	}
 
-	public void addCard(AbstractCard card) {
+	public void addCard(TerritoryCard card) {
 		cards.add(card);
 	}
 
-	public void removeCard(AbstractCard card) {
+	public void removeCard(TerritoryCard card) {
 		cards.remove(card);
 	}
 
-	public ArrayList<AbstractCard> getCards() {
+	public ArrayList<TerritoryCard> getCards() {
 		return cards;
 	}
 
-	public void setCards(ArrayList<AbstractCard> cards) {
+	public void setCards(ArrayList<TerritoryCard> cards) {
 		this.cards = cards;
 	}
 
 	@Override
 	public String toString() {
 		String result = "";
-		for(AbstractCard c : cards) {
+		for(TerritoryCard c : cards) {
 			result += c.toString() + "\n";
 		}
 		return result;

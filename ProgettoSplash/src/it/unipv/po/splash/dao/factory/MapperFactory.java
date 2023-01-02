@@ -5,11 +5,13 @@ import java.util.Properties;
 
 import it.unipv.po.splash.dao.board.IBoardMapper;
 import it.unipv.po.splash.dao.deck.IDeckMapper;
+import it.unipv.po.splash.dao.move.IArmiesMapper;
+import it.unipv.po.splash.dao.move.IMoveMapper;
 
 public class MapperFactory {
 	private static IDeckMapper deck;
 	private static IBoardMapper board;
-	
+
 	private static final String DECK_PROPERTYNAME = "deck.factory.class";
 	private static final String BOARD_PROPERTYNAME = "board.factory.class";
 	
@@ -32,7 +34,6 @@ public class MapperFactory {
 			}
 
 		}
-
 		return deck;
 	}
 	
@@ -50,7 +51,6 @@ public class MapperFactory {
 				e.printStackTrace();
 			}
 		}
-
 		return board;
 	}
 }

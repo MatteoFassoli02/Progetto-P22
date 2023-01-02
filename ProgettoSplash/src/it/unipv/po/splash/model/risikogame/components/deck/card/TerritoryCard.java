@@ -1,18 +1,33 @@
 package it.unipv.po.splash.model.risikogame.components.deck.card;
 
+import it.unipv.po.splash.model.risikogame.Player;
 import it.unipv.po.splash.model.risikogame.components.board.Territory;
 
-public class TerritoryCard extends AbstractCard {
+public class TerritoryCard {
 	private Territory territory;
 	private Figure figure;
+	private Player owner;
 	
 	public TerritoryCard(Territory territory, Figure figure) {
+		super();
 		this.territory = territory;
 		this.figure = figure;
 	}
 
 	public int getIdTerritory() {
 		return territory.getIdTerritory();
+	}
+	
+	public void discard(Player p) {
+		p.removeCard(this);
+	}
+
+	public Player getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Player owner) {
+		this.owner = owner;
 	}
 	
 	public String getNameTerritory() {
@@ -39,7 +54,5 @@ public class TerritoryCard extends AbstractCard {
 	public String toString() {
 		return "TerritoryCard [Territory=" + getNameTerritory() + ", figure=" + figure + "]";
 	}
-	
-	
-
 }
+

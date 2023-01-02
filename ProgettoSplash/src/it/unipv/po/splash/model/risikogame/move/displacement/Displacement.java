@@ -1,6 +1,7 @@
-package it.unipv.po.splash.model.risikogame.move;
+package it.unipv.po.splash.model.risikogame.move.displacement;
 
 import it.unipv.po.splash.model.risikogame.components.board.Territory;
+import it.unipv.po.splash.model.risikogame.move.IMove;
 
 public class Displacement implements IMove {
 	private int deploy;

@@ -21,6 +21,15 @@ public class PersistenceFacade {
 		return instance;
 	}
 	
+	public Territory getTerritory() {
+		return MoveMapperFactory.getMoveMapper().getTerritory();
+	}
+	
+	public int getArmies() {
+		return MoveMapperFactory.getArmiesMapper().getArmies();
+	}
+	
+	
 	public ArrayList<Continent> getAllContinents() throws Exception {
 		return MapperFactory.getBoardMapper().getAllContinents();
 	}
@@ -51,5 +60,9 @@ public class PersistenceFacade {
 	
 	public ArrayList<Figure> getFigures() {
 		return MapperFactory.getDeckMapper().getFigures();
+	}
+
+	public boolean getChoice() {
+		return MoveMapperFactory.getChoice().getChoice();
 	}
 }

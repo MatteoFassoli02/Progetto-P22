@@ -4,10 +4,10 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import it.unipv.po.splash.model.risikogame.Player;
-import it.unipv.po.splash.model.risikogame.RisikoGame;
 import it.unipv.po.splash.model.risikogame.components.board.Board;
 import it.unipv.po.splash.model.risikogame.components.board.Continent;
 import it.unipv.po.splash.model.risikogame.move.placement.Reinforcement;
+import it.unipv.po.splash.model.risikogame.risiko.DefaultRisikoGame;
 
 public class ContinentReinforceStrategy implements IReinforceStrategy{
 	private Board board;
@@ -31,7 +31,7 @@ public class ContinentReinforceStrategy implements IReinforceStrategy{
 	}
 
 	public void initialize() {
-		board = RisikoGame.getInstance().getBoard();
+		board = DefaultRisikoGame.getInstance().getBoard();
 
 		try {
 			String categoryClassName;
@@ -39,7 +39,7 @@ public class ContinentReinforceStrategy implements IReinforceStrategy{
 			p.load(new FileInputStream("../ProgettoSplash/sources/properties.txt"));
 			categoryClassName = p.getProperty(PLAYER_PROPERTYNAME);
 			
-			player = RisikoGame.getInstance().getTurns().get(Integer.parseInt(categoryClassName));
+			player = DefaultRisikoGame.getInstance().getTurns().get(Integer.parseInt(categoryClassName));
 			 
 		} catch(Exception e) {
 			e.printStackTrace();

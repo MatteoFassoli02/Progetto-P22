@@ -1,16 +1,17 @@
 package it.unipv.po.splash.model.risikogame.move.placement;
 
 import it.unipv.po.splash.model.risikogame.move.placement.strategy.IReinforceStrategy;
+import it.unipv.po.splash.model.risikogame.move.placement.strategy.factory.ReinforceStrategyFactory;
 
 public class Reinforcement implements IReinforcement{
 	private IReinforceStrategy strategy;
 	private int reinforcements;
 
 
-	public Reinforcement(IReinforceStrategy strategy) {
+	public Reinforcement() {
 		super();
 		reinforcements = 0;
-		this.strategy = strategy;
+		this.strategy = ReinforceStrategyFactory.getReinforceStrategy().makeReinforceStrategy();
 	}
 	
 	public int calcolateReinforcements() {

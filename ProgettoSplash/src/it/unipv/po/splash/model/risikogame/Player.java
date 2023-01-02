@@ -3,17 +3,19 @@ package it.unipv.po.splash.model.risikogame;
 import java.util.ArrayList;
 import java.awt.Color;
 
+import it.unipv.po.splash.dao.PersistenceFacade;
 import it.unipv.po.splash.model.risikogame.components.board.Territory;
-import it.unipv.po.splash.model.risikogame.components.deck.card.AbstractCard;
-import it.unipv.po.splash.model.risikogame.target.KillPlayerTarget;
+import it.unipv.po.splash.model.risikogame.components.deck.card.TerritoryCard;
+import it.unipv.po.splash.model.risikogame.target.IGameTarget;
 
 public class Player {
 	private String name;
 	private int score;
 	private Color colorArmies;
-	private KillPlayerTarget target;
-	private ArrayList<AbstractCard> cards;
+	private ArrayList<TerritoryCard> cards;
+	private IGameTarget target;
 	private ArrayList<Territory> estates;
+	
 	private Player killedBy;
 	private boolean dead;
 
@@ -24,10 +26,39 @@ public class Player {
 		this.colorArmies = colorArmies;
 		score = 0;
 		dead = false;
-		cards = new ArrayList<AbstractCard>();
+		cards = new ArrayList<TerritoryCard>();
 		estates = new ArrayList<Territory>();
 	}
-
+	
+	public Territory askTerritory() {
+		return PersistenceFacade.getInstance().getTerritory();
+	}
+	
+	public int askArmies() {
+		return PersistenceFacade.getInstance().getArmies();
+	}
+	
+	public boolean askRepeatAttack() {
+		return PersistenceFacade.getInstance().getChoice();
+	}
+	
+	public boolean askAction() {
+		return PersistenceFacade.getInstance().getChoice();
+	}
+	
+	public TerritoryCard askCard() {
+		int num = PersistenceFacade.getInstance().getArmies();
+		return cards.get(num);
+	}
+	
+	public boolean hasTerritory(Territory t) {
+		for(Territory t1: estates) {
+			if(t.getName().equalsIgnoreCase(t1.getName()))
+				return true;
+		}
+		return false;
+	} 
+	
 	public boolean isDead() {
 		return dead;
 	}
@@ -64,19 +95,19 @@ public class Player {
 		this.colorArmies = colorArmies;
 	}
 
-	public ArrayList<AbstractCard> getCards() {
+	public ArrayList<TerritoryCard> getCards() {
 		return cards;
 	}
 
-	public void setCards(ArrayList<AbstractCard> cards) {
+	public void setCards(ArrayList<TerritoryCard> cards) {
 		this.cards = cards;
 	}
 
-	public void addCard(AbstractCard card) {
+	public void addCard(TerritoryCard card) {
 		cards.add(card);
 	}
 
-	public void removeCard(AbstractCard card) {
+	public void removeCard(TerritoryCard card) {
 		cards.remove(card);
 	}
 
@@ -96,14 +127,21 @@ public class Player {
 		estates.remove(t);
 	}
 	
-	public KillPlayerTarget getTarget() {
+	public IGameTarget getTarget() {
 		return target;
 	}
 	
-	public void setTarget(KillPlayerTarget target) {
+	public void setTarget(IGameTarget target) {
 		this.target = target;
 	}
 	
+	public int getNumArmies() {
+		int result = 0;
+		for(Territory t: estates) {
+			result += t.getNumArmies();
+		}
+		return result;
+	}
 
 	@Override
 	public String toString() {
@@ -113,7 +151,7 @@ public class Player {
 		}
 		
 		s += "Carte Possedute:\n";
-		for (AbstractCard c:  cards) {
+		for (TerritoryCard c:  cards) {
 			s += c.toString() + "\n";			
 		}
 		s += "Punteggio: " + getScore() +"\n";

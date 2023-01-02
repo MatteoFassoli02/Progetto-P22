@@ -22,8 +22,7 @@ public class AttackStrategyFactory {
 				e.printStackTrace();
 				return null;
 			}
-			return attackStrategy;
 		}
-		return null;
+		return attackStrategy;
 	}
 }

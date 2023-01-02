@@ -109,15 +109,22 @@ public class Territory {
 	public String toString() {
 		String result = "";
 		result += "Territory: " + getName() + " [ " + getIdTerritory() + " ]\n";
-		result += "	Owner: " + getOwner() + "\n";
+		/*result += "	Owner: " + getOwner().getName() + "\n";
 		result += "	Armies: " + getNumArmies() + "\n";
 		result += "	Borders:\n ";
 		for (Territory t: getBorders()) {
 			result += "		" + t.getName() + "\n";
 		}
 		result += "	Score: " + getScore() + "\n";
-		result += "	Color: " + getColor() + "\n";
+		result += "	Color: " + getColor() + "\n";*/
 		return result;
 	}
-	
+	 
+	public String showInformation() {
+		String result = "";
+		result += "Territory: " + getName() + " [ " + getIdTerritory() + " ]\n";
+		result += "	Owner: " + getOwner().getName() + "\n";
+		result += "	Armies: " + getNumArmies() + "\n";
+		return result;
+	}
 }

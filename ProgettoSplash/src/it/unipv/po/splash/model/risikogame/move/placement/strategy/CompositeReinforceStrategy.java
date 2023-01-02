@@ -35,6 +35,4 @@ public class CompositeReinforceStrategy implements IReinforceStrategy {
 	public void setStrategies(ArrayList<IReinforceStrategy> strategies) {
 		this.strategies = strategies;
 	}
-	
-	
 }
